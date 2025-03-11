@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    SONARQUBE_OLAWALE = credntials('sonarqubetaye')
+    SONARQUBE_OLAWALE = credentials('sonarqubetaye')
   }
   stages {
     stage('Build') {
