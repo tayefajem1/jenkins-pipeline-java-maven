@@ -1,4 +1,4 @@
-pipipeline {
+pipeline {
   agent any
   environment {
     SONARQUBE_OLAWALE = credntials('sonarqubetaye')
