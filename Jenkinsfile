@@ -17,8 +17,7 @@ pipeline {
      stage ('Sonaqube for anaysis') {
             steps {
                 echo 'Sonaqube for anaysis'
-                sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=Sonar-Jenkins_1 -Dsonar.projectName=Sonar-Jenkins1 -Dsonar.host.url=http://http://http://3.149.213.150:9000 -Dsonar.token=${SONARQUBE_CREDENTIAL}'
-            }
+                sh mvn clean verify sonar:sonar  -Dsonar.projectKey=Sonar-Jenkins_1  -Dsonar.projectName=Sonar-Jenkins1 -Dsonar.host.url=http://3.149.213.150:9000 -Dsonar.token=${SONARQUBE_CREDENTIAL}'
         }
   }
 }
