@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  environment {
+    SONARQUBE = credntials('sonarqubetaye')
+  }
 
   stages {
     stage('Build') {
@@ -15,7 +18,7 @@ pipeline {
     stage('Sonarqube') {
       steps {
         echo "Sonarqube Scanner"
-        sh 'mvn clean verify sonar:sonar  -Dsonar.projectKey=Sonar -Dsonar.projectName=Sonar -Dsonar.host.url=http://3.149.213.150:9000 -Dsonar.token=sqp_cd1bdfa275978e7e4510aac0cf2aeb41b17b539d'
+        sh 'mvn clean verify sonar:sonar  -Dsonar.projectKey=Sonar -Dsonar.projectName=Sonar -Dsonar.host.url=http://3.149.213.150:9000 -Dsonar.token=${SONARQUBE}'
       }
     }
     
